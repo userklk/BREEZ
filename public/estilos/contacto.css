@@ -75,89 +75,116 @@ body {
 	border-radius: 2rem;
 	padding: 0.5rem 2.3rem;
 }
+.abrir-menu{
+  display: none;
+}
+.cerrar-menu{
+	display: none;
+}
 
 /* FIN del header */
+/* Responsive del header  */
+@media screen and (max-width: 550px) {
+	.header{
+		background-color: #1f1e1eb6;
+	}
+  .abrir-menu{
+    display: block;
+    border: 0;
+    font-size: 1.5rem;
+    background-color: transparent;
+    cursor: pointer;
+    color: #fff;
+    z-index: 1001;
+  }
+
+  .abrir-menu {
+	
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+  }
+  #abrir{
+	display: block;
+  }
+
+  .navegacion {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(28, 28, 28, 0.95);
+    padding: 2rem;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1000;
+  }
+  body.menu-abierto {
+  overflow: hidden;
+}
+
+  .navegacion.visible {
+    opacity: 1;
+    visibility: visible;
+	display: flex;
+	align-items: center;
+  }
+.navegacion.visible ~ .abrir-menu {
+  display: none;
+}
+  .navegacion-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin-top: 3rem;
+  }
+
+  .navegacion-list li {
+    width: 100%;
+    text-align: right;
+  }
+
+  .navegacion-list li a {
+	    display: inline-block;
+    color: #ececec;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: block;
+    padding: 0.5rem 0;
+	
+  }
+
+  .btn-llamar {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: #D85B5B;
+    color: white;
+    padding: 0.5rem 2rem;
+    border-radius: 2rem;
+    border: 2px solid #D85B5B;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .logo {
+    max-width: 8rem;
+    height: 80px;
+  }
+}
 
 /* INICIO del formulario */
-
-/* .contacto{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-}
-#contacto-form{
-    background-image: url(../img/coches/clasico.avif);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 20px;
-    background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-    height: 50%;
-    color: #D85B5B;
-}  */
-/* Prueba de formato de label */
-/* #contacto-form{
-	width: 100%;
-	height: 50px;
-	max-width: 400px;
-	position: relative;
-	overflow: hidden;
-}
-
-#contacto-form input{
-	width: 100%;
-	height: 100%;
-	background: none;
-	color: #fff;
-	padding-top: 20px;
-	border: none;
-	outline: 0;
-}
-
-#contacto-form .label_name{
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	pointer-events: none;
-	border-bottom: 1px solid #c7c7c7;	
-}
-
-#contacto-form .label_name{
-	content: "";
-	position: absolute;
-	left: 0;
-	bottom: -1px;
-	width: 100%;
-	height: 100%;
-	border-bottom: 3px solid #D85B5B;
-	transform: translateX(-100%);
-	transition: all 0.3s ease;
-}
-.text_name{
-	position: absolute;
-	bottom: 5px;
-	left: 0;
-	transition: all 0.3s ease;
-	color: #D85B5B;
-}
-#contacto-form input:focus + .label_name .text_name,
-#contacto-form input:valid + .label_name .text_name{
-	transform: translateY(-150%);
-	font-size: 14px;
-	color: #c56161;
-}
-#contacto-form input:focus + .label_name:after,
-#contacto-form input:valid + .label_name:after{
-	transform: translateX(0);
-} */
-
 /* Prueba 2 */
 .contacto {
 	display: flex;
@@ -242,4 +269,168 @@ textarea.form_input {
 	background-color: var(--main-color);
 	color: var(--blanco);
 	border: 1px solid var(--blanco);
+}
+/* Footer */
+.footer {
+	margin-top: 5rem;
+	position: absolute;
+	/* bottom: 0; */
+	width: 100%;
+	background-color: #2a2626;
+	color: var(--blanco);
+	text-align: center;
+	padding: 3rem 0;
+	font-size: 0.9rem;
+}
+
+
+/* Responsive de la pagina entera */
+
+/* Ultimos media  */
+@media screen and (max-width: 768px) {
+  .priemro-escaparate {
+    height: auto;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+  }
+
+  .titulo-inicio {
+    font-size: 2.2rem;
+    margin-top: 4rem;
+    padding: 0 1rem;
+  }
+
+  .catalogo {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	padding: 2rem;
+  }
+
+  .bloque-imagen-escaparate p {
+    color: #fff;
+    font-size: 1rem;
+    padding: 0 1rem;
+    text-shadow: 0 0 3px #000;
+  }
+
+  .descbre-catalogo {
+    font-size: 1rem;
+    margin: 0 auto;
+    margin-top: 1rem;
+    margin-right: 0;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .bloque-par {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .carta-izquierda,
+  .carta-derecha {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16/10;
+  }
+
+  .info-carta {
+    padding: 1rem;
+    margin-top: auto;
+  }
+
+  .Texto-inf-carta {
+    margin-top: auto;
+  }
+
+  .btn-ver-mas {
+    width: fit-content;
+    padding: 0.6rem 2rem;
+    font-size: 1rem;
+  }
+
+  .footer {
+    font-size: 0.8rem;
+    text-align: center;
+	padding: 1rem 0;
+	margin: 0;
+  }
+
+  .footer a img {
+    margin-top: 1rem;
+  }
+
+  .span-div {
+    font-size: 0.9rem;
+    padding: 0.3rem 1rem;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .titulo-inicio {
+    font-size: 1.8rem;
+    margin-top: 3rem;
+    padding: 0 1rem;
+  }
+
+   .catalogo {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	padding: 2rem;
+  }
+
+  .bloque-imagen-escaparate p {
+    font-size: 0.95rem;
+    padding: 0 0.5rem;
+  }
+
+  .descbre-catalogo {
+    font-size: 0.95rem;
+    padding: 0.8rem 1rem;
+    border-radius: 0.8rem;
+    box-shadow: 0 0 4px #141414, 0 0 6px #5a0101;
+  }
+
+  .span-div {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.8rem;
+  }
+
+  .bloque-par {
+    gap: 1.5rem;
+  }
+
+  .carta-izquierda,
+  .carta-derecha {
+    height: auto;
+    aspect-ratio: 16/9;
+  }
+
+  .info-carta {
+    padding: 0.8rem;
+  }
+
+  .Texto-inf-carta {
+    font-size: 1.1rem;
+  }
+
+  .btn-ver-mas {
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .footer {
+    font-size: 0.75rem;
+  }
+
+  .footer a img {
+    width: 24px;
+    height: auto;
+  }
 }
