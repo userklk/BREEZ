@@ -75,6 +75,9 @@ body {
 .abrir-menu{
   display: none;
 }
+.cerrar-menu{
+	display: none;
+}
 /* Primer @media */
 @media screen and (max-width: 550px) {
 	.header{
@@ -91,11 +94,14 @@ body {
   }
 
   .abrir-menu {
+	
     position: absolute;
     top: 1.2rem;
     right: 1.2rem;
   }
-
+  #abrir{
+	display: block;
+  }
 
   .navegacion {
     position: fixed;
