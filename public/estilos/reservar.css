@@ -20,6 +20,7 @@ body.fondo-coche {
 
 }
 
+/* Principio del header */
 .header {
 	/* background-color: #f8f9fa; */
 	text-align: center;
@@ -32,7 +33,7 @@ body.fondo-coche {
 }
 
 .logo {
-	height: 110px;
+	height: 140px;
 	width: auto;
 	position: relative;
 
@@ -41,7 +42,7 @@ body.fondo-coche {
 .logo-breez {
 	width: 100%;
 	height: 100%;
-	box-shadow: 0 0 6px #841111, 0 0 2px #5a0101, 0 0 5px #373537, 0 0 4px #313232;
+	box-shadow: 0 0 6px #841111, 0 0 8px #5a0101, 0 0 15px #373537, 0 0 10px #313232;
 }
 
 .navegacion {
@@ -50,7 +51,7 @@ body.fondo-coche {
 	justify-content: right;
 	height: 4.5rem;
 	gap: 1rem;
-	background-color: #702e2e48;
+	background-color: #01010148;
 	/* opacity: 0.5; */
 	width: 100%;
 	padding-right: 0.5rem;
@@ -77,6 +78,115 @@ body.fondo-coche {
 	border-radius: 2rem;
 	padding: 0.5rem 2.3rem;
 }
+.abrir-menu{
+  display: none;
+}
+.cerrar-menu{
+	display: none;
+}
+
+/* FIN del header */
+/* Responsive del header  */
+@media screen and (max-width: 550px) {
+	.header{
+		background-color: #1f1e1eb6;
+	}
+  .abrir-menu{
+    display: block;
+    border: 0;
+    font-size: 1.5rem;
+    background-color: transparent;
+    cursor: pointer;
+    color: #fff;
+    z-index: 1001;
+  }
+
+  .abrir-menu {
+	
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+  }
+  #abrir{
+	display: block;
+  }
+
+  .navegacion {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(28, 28, 28, 0.95);
+    padding: 2rem;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1000;
+  }
+  body.menu-abierto {
+  overflow: hidden;
+}
+
+  .navegacion.visible {
+    opacity: 1;
+    visibility: visible;
+	display: flex;
+	align-items: center;
+  }
+.navegacion.visible ~ .abrir-menu {
+  display: none;
+}
+  .navegacion-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin-top: 3rem;
+  }
+
+  .navegacion-list li {
+    width: 100%;
+    text-align: right;
+  }
+
+  .navegacion-list li a {
+	    display: inline-block;
+    color: #ececec;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: block;
+    padding: 0.5rem 0;
+	
+  }
+
+  .btn-llamar {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: #D85B5B;
+    color: white;
+    padding: 0.5rem 2rem;
+    border-radius: 2rem;
+    border: 2px solid #D85B5B;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .logo {
+    max-width: 8rem;
+    height: 80px;
+  }
+}
+
 
 #detalle-coche {
 	/* overflow: hidden; */
@@ -332,4 +442,29 @@ form> :last-child {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+}
+.footer {
+	margin-top: 5rem;
+	position: absolute;
+	bottom: -34rem;
+	width: 100%;
+	background-color: #2a2626;
+	color: var(--blanco);
+	text-align: center;
+	padding: 3rem 0;
+	font-size: 0.9rem;
+}
+@media (max-width: 1000px) {
+	
+	.carta-izquierda {
+		margin-top: 10rem;
+	}
+	.carta-derecha {
+		margin-top: 10rem;
+	}
+	.info-carta {
+		flex-direction: column;
+		align-items: center;
+		height: 100%;
+	}
 }
